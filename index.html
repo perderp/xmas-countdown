@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Countdown</title>
+    <link rel="icon" type="image/x-icon" href="./public/images/favicon.png">
+    <link rel="stylesheet" href="./public/css/index.css">
+    <link rel="stylesheet" href="./public/css/page/index.css">
+</head>
+<body>
+    <audio src="./public/music/piano.mp3" autoplay loop >
+        <source src="./public/music/piano.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+
+    <section class="countdown">
+        <div id="particles-js" class="particle"></div>
+        <div class="countdown__overlay">
+            <img src="./public/images/cis_padre.png" alt="Cis_padre" class="cis">
+        </div>
+        <div class="l-wrap">
+            <div class="l-container countdown__inner u-d-f">
+                <div class="countdown__top">
+                    Christmas Countdown
+                </div>
+                <div class="countdown__bottom u-d-f">
+                    <div class="days">
+                        <div class="days__top"></div>
+                        <div class="days__bottom">
+                            DAYS
+                        </div>
+                    </div>
+
+                    <div class="hours">
+                        <div class="hours__top"></div>
+                        <div class="hours__bottom">
+                            HOURS
+                        </div>
+                    </div>
+
+                    <div class="minutes">
+                        <div class="minutes__top"></div>
+                        <div class="minutes__bottom">
+                            MINUTES
+                        </div>
+                    </div>
+
+                    <div class="seconds">
+                        <div class="seconds__top"></div>
+                        <div class="seconds__bottom">
+                            SECONDS
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script defer src="./public/js/compiled.js"></script>
+</body>
+</html>
