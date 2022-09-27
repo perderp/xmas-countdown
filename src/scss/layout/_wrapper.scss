@@ -1,0 +1,23 @@
+
+.l-wrap {
+    max-width: $body-max-width;
+    margin: 0 auto;
+    padding: 0 $gutter-pc;
+
+    @include is-pc {
+        max-width: $body-max-width;
+        margin: 0 auto;
+        padding: 0 $gutter-pc;
+    }
+
+    @include is-tablet {
+        margin: 0 auto;
+        padding: 0 $gutter-pc;
+    }
+
+
+    @include is-sp {
+        margin: 0 auto;
+        padding: 0 $gutter-sp;
+    }
+}

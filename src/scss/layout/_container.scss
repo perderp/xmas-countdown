@@ -1,0 +1,12 @@
+.l-container{
+    
+    @include is-pc{
+        padding:20px 0;
+    }
+    @include is-sp{
+        padding:10px 0;
+    }
+    &__left, &__right{
+        width:50%;
+    }
+}

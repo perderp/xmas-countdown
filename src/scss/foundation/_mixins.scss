@@ -1,0 +1,44 @@
+// ---------------------------------------------------------------
+//  Breakpoints
+//
+// > usage
+// > @include is-pc{ content here }
+//
+// ---------------------------------------------------------------
+@mixin is-pc {
+    @media only screen and (min-width: #{$breakpoint-tablet + 1}){
+        @content;
+    }
+}
+
+
+
+@mixin is-tablet {
+    @media only screen and (max-width:$breakpoint-tablet)  and (min-width:#{$breakpoint-sp + 1}){
+        @content;
+    }
+}
+
+
+@mixin is-sp {
+    @media only screen and (max-width: $breakpoint-sp ){
+        @content;
+    }
+}
+
+
+// ---------------------------------------------------------------
+//  font-line
+//
+// > usage
+// > @include font-line(16, 20);
+//
+// ---------------------------------------------------------------
+@mixin font-line($size, $line:null) {
+    $rem:calc( $size / $font-size-base);
+    font-size: #{$rem}rem;
+    @if $line !=null {
+      line-height: calc($line / $size);
+    }
+  }
+  

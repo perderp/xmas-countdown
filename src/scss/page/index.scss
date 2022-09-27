@@ -1,0 +1,128 @@
+@charset "UTF-8";
+@import "../foundation/**/*";
+
+.particle{
+    position: absolute;
+    width: 100%;
+    height: 99%;
+    z-index: 0;
+    top:0;
+}
+
+.countdown{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(7,121,228,1) 0%, rgba(76,187,185,1) 100%);
+    &__overlay{
+
+        .cis{
+            position: absolute;
+            bottom:0;
+            z-index: 0;
+            left:10px;
+            @include is-pc{
+                left:20px;
+            }
+            @include is-tablet{
+                height:250px;
+            }
+            @include is-sp{
+                height: 200px;
+            }
+        }
+
+        .per{
+            position: absolute;
+            right:0;
+            z-index: 0;
+            animation: peak-a-boo 1s cubic-bezier(.63,-0.01,.68,1.06) both;
+            @include is-pc{
+                right:-150px;
+                top:50px;
+                animation:none;
+                transition: .3s ease-in-out;
+                &:hover{
+                    transform:rotate(-20deg) translateX(-80px);
+                }
+            }
+            @include is-tablet{
+                height:180px;
+                width:100px;
+                right:-75px;
+            }
+
+            @include is-sp{
+                height:150px;
+                width:86px;
+                right:-65px;
+
+
+            }
+
+
+        }
+        
+    }
+    &__inner{
+        height:100vh;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__top{
+        @include font-line(40,40);
+        @include is-tablet{
+            @include font-line(50,50);
+        }
+        @include is-pc{
+            @include font-line(60,60);
+        }
+        text-align: center;
+        color:$colortext01;
+        font-family: $font-family02;
+        font-weight:700;
+        margin:0 0 50px;
+    }
+    &__bottom{
+        flex-wrap: wrap;
+        .days, .hours, .minutes, .seconds{
+            margin:0 5px ;
+            @include is-tablet{
+                margin: 0 10px;
+            }
+            @include is-pc{
+                margin: 0 20px;
+            }
+            &__top, &__bottom{
+                text-align: center;
+                color:$colortext01;
+
+            }
+
+            &__top{
+                @include font-line(35,35);
+                @include is-tablet{
+                    @include font-line(50,50);
+                }
+                @include is-pc{
+                    @include font-line(60,60);
+                }
+                font-weight: 700;
+            }
+            &__bottom{
+                @include font-line(18,18);
+                @include is-tablet{
+                    @include font-line(35,35);
+                }
+                @include is-pc{
+                    @include font-line(40,40);
+                }
+
+                justify-content: center;
+                align-items: center;
+
+            }
+        }
+    }
+}

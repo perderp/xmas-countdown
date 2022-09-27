@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*
+    FLOCSS
+    Foundation - CSS RESET, Default Style, Variables, Color, Typography
+    Layout - Exist only once ex. Header, footer, sidebar
+    Object -
+*/
+@import "foundation/**/*";
+@import "layout/**/*";
+@import "object/component/**/*";
+@import "object/project/**/*";
+@import "object/utility/**/*";
