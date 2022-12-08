@@ -4,30 +4,27 @@ window.addEventListener('DOMContentLoaded', () => {
         theDay()
     }, 1000)
     const theDay = () => {
-        let current_time = new Date(),
-            christmas_year = current_time.getFullYear();
-    
-        //Get Month() 
-        if(current_time.getMonth() == 11 && current_time.getDate() > 25) christmas_year += 1;
-    
-    
-        let christmas_time = new Date(christmas_year, 11, 25);
-        let dateDiff = Math.floor(christmas_time - current_time);
-    
-        let DAYS = 0 , HOURS = 0, MINUTES = 0, SECONDS = 0;
-        const day_time = 1000 * 60 * 60 * 24;
-    
-        if(current_time.getMonth() != 11 || (current_time.getMonth == 11 && current_time.getTime() != 25)){
-            DAYS = Math.floor(dateDiff / (day_time));
-            HOURS = Math.floor((dateDiff) % (day_time) / (1000 * 60 * 60));
-            MINUTES = Math.floor((dateDiff) % (1000 * 60 * 60) / (1000 * 60));
-            SECONDS = Math.floor((dateDiff) % (1000 * 60) / 1000);
-        }
-    
-        display(setZero(DAYS), setZero(HOURS), setZero(MINUTES), setZero(SECONDS));
+      const current_time = new Date();
+      const getYear = current_time.getFullYear();
+  
+  
+      // get the xmas month
+      const christmas_time = new Date(getYear, 11, 25);
+      const dateDiff = Math.floor(christmas_time - current_time);
+      
+      let DAYS = 0, HOURS = 0, MINUTES = 0, SECONDS = 0;
+      const milli_seconds = 1000, seconds = 60, minutes = 60, hours = 24;
+      const day_time = milli_seconds * seconds * minutes * hours;
+  
+      DAYS = Math.floor(dateDiff / day_time);
+      HOURS = Math.floor((dateDiff) % (day_time) / (milli_seconds * seconds * minutes));
+      MINUTES = Math.floor(dateDiff % (milli_seconds * seconds * minutes) / (milli_seconds * seconds))
+      SECONDS = Math.floor(dateDiff % (milli_seconds * seconds) / milli_seconds)
+  
+      displayDay(setZero(DAYS), setZero(HOURS), setZero(MINUTES), setZero(SECONDS))
     }
     
-    const display = (day, hour, min, sec) => {
+    const displayDay = (day, hour, min, sec) => {
         const days = document.querySelector('.days__top');
         const hours = document.querySelector('.hours__top');
         const minutes = document.querySelector('.minutes__top');
@@ -37,7 +34,6 @@ window.addEventListener('DOMContentLoaded', () => {
         minutes.innerHTML = min;
         seconds.innerHTML =  sec;
     }
-    
     const setZero = (val) => {
         if(val < 10){
             val = "0" + val;
