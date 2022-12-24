@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
   
       // get the xmas month
-      const christmas_time = new Date(getYear, 11, 25);
+      const christmas_time = new Date(getYear, 11, 31);
       const dateDiff = Math.floor(christmas_time - current_time);
       
       let DAYS = 0, HOURS = 0, MINUTES = 0, SECONDS = 0;
